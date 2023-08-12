@@ -3,6 +3,7 @@ var m_wheel_up = mouse_wheel_up();
 var m_wheel_down = mouse_wheel_down();
 var m_x = device_mouse_x_to_gui(0);
 var m_y = device_mouse_y_to_gui(0);
+var right_analog_vertical = gamepad_axis_value(0, gp_axisrv);
 		
 ////SCROLLING
 var scroll_surface_total_y = scroll_height;
@@ -10,11 +11,16 @@ var scroll_surface_total_y = scroll_height;
 var scrollable_bar_height = (height / scroll_surface_total_y) * height;
 		
 //MOUSE SCROLL
-var change = m_wheel_down - m_wheel_up;
+var change = (m_wheel_down - m_wheel_up);
 if(change != 0) {
 	//Note: you may want to alter how "fast" this changes to change the scroll speed
 	scroll_ratio_y += change * (scrollable_bar_height / height);
 	scroll_ratio_y = clamp(scroll_ratio_y, 0, 1);
+}
+
+if (abs(right_analog_vertical) >= 0.05){
+	scroll_ratio_y += right_analog_vertical * (scrollable_bar_height / height);
+	scroll_ratio_y = clamp(scroll_ratio_y, 0, 1);	
 }
 	
 //The y offset all images drawn in the frame should add to their y draw position

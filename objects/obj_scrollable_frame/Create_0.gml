@@ -41,3 +41,9 @@ function set_contents(draw_function) {
 	frame_contents = draw_function;	
 }
 frame_contents = undefined;
+
+
+if gamepad_is_connected(0) gamepad_set_axis_deadzone(0, 0.05);
+if gamepad_is_connected(1) gamepad_set_axis_deadzone(1, 0.05);
+if gamepad_is_connected(2) gamepad_set_axis_deadzone(2, 0.05);
+if gamepad_is_connected(3) gamepad_set_axis_deadzone(3, 0.05);
