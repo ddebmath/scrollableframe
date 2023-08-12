@@ -10,7 +10,7 @@ if(surface_exists(surf)) {
 	
 	////HERE IS WHERE WE RUN OUR "frame_contents" FUNCTION!
 	if(frame_contents != undefined) {
-		frame_contents(scroll_offset_y);
+		frame_contents(scroll_offset_x, scroll_offset_y);
 	} else {
 		//Some debug text
 		draw_text_ext(0, 0, "Frame contents is empty. \n\nYou have not called set_contents() after creating the scrollable frame.", string_height("M"), width);

@@ -1,5 +1,5 @@
 //Setup function which is called by create_scrollable_frame()
-function setup(total_height, frame_x, frame_y, frame_width, frame_height, scroll_bar_width, scroll_bar_offset, inner_border_offset, rounding_radius, default_colour, hover_colour, drag_colour, border_colour) {
+function setup(total_height, total_width, frame_x, frame_y, frame_width, frame_height, scroll_bar_width, scroll_bar_offset, inner_border_offset, rounding_radius, default_colour, hover_colour, drag_colour, border_colour) {
 	x = frame_x;
 	y = frame_y;
 	width = frame_width;
@@ -7,6 +7,8 @@ function setup(total_height, frame_x, frame_y, frame_width, frame_height, scroll
 	
 	//The total size of the scrollable frame
 	scroll_height = total_height;
+	// Width of the scrollable frame
+	scroll_width = total_width;
 	//Width of the scroll bar
 	bar_width = scroll_bar_width;
 	//Border for the inner bar
@@ -22,6 +24,7 @@ function setup(total_height, frame_x, frame_y, frame_width, frame_height, scroll
 	
 	////NOTE: This will be an important variable
 	scroll_offset_y = 0;
+	scroll_offset_x = 0;
 	//Coords for the back of the scroll bar
 	scroll_bar_y1 = scroll_bar_offset;
 	scroll_bar_y2 = height - scroll_bar_offset;
@@ -30,6 +33,7 @@ function setup(total_height, frame_x, frame_y, frame_width, frame_height, scroll
 	
 	////Internal variables
 	scroll_ratio_y = 0;
+	scroll_ratio_x = 0;
 	surf = -1;
 	dragging = false;
 	hover = false;
