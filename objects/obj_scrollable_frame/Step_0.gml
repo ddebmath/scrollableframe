@@ -28,8 +28,8 @@ if (abs(right_analog_vertical) >= 0.2){
 }
 
 // Right analog stick horizontal scroll
-if (abs(right_analog_horizontal) >= 0.2){
-	scroll_ratio_x += right_analog_horizontal * (scrollable_bar_width / width);
+if (abs(right_analog_horizontal) >= 0.4){
+	scroll_ratio_x += 0.1 * right_analog_horizontal * (scrollable_bar_width / width);
 	scroll_ratio_x = clamp(scroll_ratio_x, 0, 1);
 
 }
@@ -39,7 +39,7 @@ if (abs(right_analog_horizontal) >= 0.2){
 scroll_offset_y = - scroll_ratio_y * (scroll_surface_total_y - height);
 
 // The x offset of all text/images drawn
-scroll_offset_x = scroll_ratio_x * (scroll_surface_total_x - width);
+scroll_offset_x = - scroll_ratio_x * (scroll_surface_total_x - width);
 		
 //Scrollable bar 
 scrollable_bar_y1 = (height - scrollable_bar_height) * scroll_ratio_y;

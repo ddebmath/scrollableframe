@@ -1,5 +1,5 @@
 //Create the frame; uses a lot of the default arguments
-var frame = create_scrollable_frame(1000, 1000, 10, 10, room_width - 10, room_height - 10);
+var frame = create_scrollable_frame(1000, 3000, 10, 10, room_width - 10, room_height - 10);
 
 //Set the frame's contents, ie. what we draw inside of it
 //IMPORTANT: Remember, this function must have an argument 'offset_y' to make the scroll work
